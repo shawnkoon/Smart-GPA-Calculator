@@ -16,5 +16,19 @@ namespace smart_gpa_calculator
         {
             InitializeComponent();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void singleClassButton_Click(object sender, EventArgs e)
+        {
+            Form singleClassForm = new SingleClassForm();
+
+            this.Visible = false;
+            singleClassForm.ShowDialog();
+            this.Visible = true;
+        }
     }
 }
