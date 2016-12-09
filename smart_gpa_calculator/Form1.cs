@@ -22,13 +22,5 @@ namespace smart_gpa_calculator
             Application.Exit();
         }
 
-        private void singleClassButton_Click(object sender, EventArgs e)
-        {
-            Form singleClassForm = new SingleClassForm();
-
-            this.Visible = false;
-            singleClassForm.ShowDialog();
-            this.Visible = true;
-        }
     }
 }
