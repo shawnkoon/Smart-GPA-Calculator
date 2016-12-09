@@ -12,3 +12,10 @@ C:\Users\shawnkoon\Desktop\All\Program\gitProject\GitHub\Smart-GPA-Calculator\sm
 C:\Users\Konnor\Documents\GitHub\Smart-GPA-Calculator\smart_gpa_calculator\bin\Debug\smart_gpa_calculator.exe.config
 C:\Users\Konnor\Documents\GitHub\Smart-GPA-Calculator\smart_gpa_calculator\obj\Debug\smart_gpa_calculator.exe
 C:\Users\Konnor\Documents\GitHub\Smart-GPA-Calculator\smart_gpa_calculator\obj\Debug\smart_gpa_calculator.pdb
+C:\Users\Konnor\Documents\GitHub\Smart-GPA-Calculator\smart_gpa_calculator\bin\Debug\smart_gpa_calculator.exe
+C:\Users\Konnor\Documents\GitHub\Smart-GPA-Calculator\smart_gpa_calculator\bin\Debug\smart_gpa_calculator.pdb
+C:\Users\Konnor\Documents\GitHub\Smart-GPA-Calculator\smart_gpa_calculator\obj\Debug\smart_gpa_calculator.csprojResolveAssemblyReference.cache
+C:\Users\Konnor\Documents\GitHub\Smart-GPA-Calculator\smart_gpa_calculator\obj\Debug\smart_gpa_calculator.mainForm.resources
+C:\Users\Konnor\Documents\GitHub\Smart-GPA-Calculator\smart_gpa_calculator\obj\Debug\smart_gpa_calculator.Properties.Resources.resources
+C:\Users\Konnor\Documents\GitHub\Smart-GPA-Calculator\smart_gpa_calculator\obj\Debug\smart_gpa_calculator.SingleClassForm.resources
+C:\Users\Konnor\Documents\GitHub\Smart-GPA-Calculator\smart_gpa_calculator\obj\Debug\smart_gpa_calculator.csproj.GenerateResource.Cache
