@@ -14,18 +14,21 @@ namespace smart_gpa_calculator
     {
         // Variables we want accessible in all the panels
         // (these are temporaries used for transferring data and pre-populating fields)
-        private string major;
-        private string minor;
         private string termSeason;
         private int year;
-        private string termLength;
         private string dept;
         private int courseNum;
         private string courseName;
         private int numCredits;
-        private float actual;
-        private float outOf;
-        private string category;
+        private float grade;
+
+        /* These are all "One Time" values, and we will worry about how we want to gather these later
+         * private string major; -- May want to change this so User can have more than one
+         * private string minor; -- Same as above
+         * private string termLength; -- Quarter vs. Semester
+         * private float scale; -- 4.0, 5.0, etc. Hard-coding in 4.0 for now
+         * private string category; -- Whether the class belongs to your Major, Minor, or Neither
+         * */
 
         // This holds all the terms, and each Term holds some courses
         private Cumulative all;
@@ -41,9 +44,20 @@ namespace smart_gpa_calculator
             Application.Exit();
         }
 
+        /// <summary>
+        ///     Take all the stuff from the submission form and put them in the temp variables.
+        ///     https://msdn.microsoft.com/en-us/library/bb397679.aspx Reviewing how to Parse Ints
+        /// </summary>
         private void addClassButton_Click(object sender, EventArgs e)
         {
-            // Take aaall the stuff from the submission form and put them in the temp variables
+            // 
+            termSeason = termSeasonComboBox.SelectedText;
+            year = Convert.ToInt32(yearUpDown.Value); //Doesn't need a catch since input is forced to be proper
+            dept = deptTextBox.Text;
+            courseNum = Convert.ToInt32(courseNumUpDown.Value);
+            courseName = courseNameTextBox.Text;
+            numCredits = Convert.ToInt32(numCreditsUpDown.Value);
+            grade = Convert.ToInt32(gradeUpDown.Value);
 
             // Then place them in a course
 
