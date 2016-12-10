@@ -11,7 +11,7 @@ namespace smart_gpa_calculator
         private string major;
         private string minor;
         private float scale; // "outOf"
-        Term[] terms;
+        private Term[] terms;
 
         public Cumulative(string maj, string min, float s, Term t)
         {
