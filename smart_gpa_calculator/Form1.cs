@@ -28,7 +28,7 @@ namespace smart_gpa_calculator
         string category;
 
         // This holds all the terms, and each Term holds some courses
-        Term[] terms;
+        Cumulative all;
 
         public mainForm()
         {
@@ -42,6 +42,13 @@ namespace smart_gpa_calculator
 
         private void addClassButton_Click(object sender, EventArgs e)
         {
+            // Take aaall the stuff from the submission form and put them in the temp variables
+
+            // Then place them in a course
+
+            // Then place that course in the appropriate Term (if exists)
+
+            // Then place the Term in Cumulative if it doesn't exist
 
         }
     }
