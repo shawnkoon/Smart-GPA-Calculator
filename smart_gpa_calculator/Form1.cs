@@ -12,6 +12,24 @@ namespace smart_gpa_calculator
 {
     public partial class mainForm : Form
     {
+        // Variables we want accessible in all the panels
+        // (these are temporaries used for transferring data and pre-populating fields)
+        string major;
+        string minor;
+        string termSeason;
+        int year;
+        string termLength;
+        string dept;
+        int courseNum;
+        string courseName;
+        int numCredits;
+        float actual;
+        float outOf;
+        string category;
+
+        // This holds all the terms, and each Term holds some courses
+        Term[] terms;
+
         public mainForm()
         {
             InitializeComponent();
@@ -22,5 +40,9 @@ namespace smart_gpa_calculator
             Application.Exit();
         }
 
+        private void addClassButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
