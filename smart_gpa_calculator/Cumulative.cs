@@ -8,22 +8,37 @@ namespace smart_gpa_calculator
 {
     class Cumulative
     {
-        private string major;
-        private string minor;
-        private float scale; // "outOf"
+        /* Cumulative will store the "One Time" values that we're worrying about later
+         * private string major;
+         * private string minor;
+         * private string termLength;
+         * private double scale; // "outOf"
+         */
         private Term[] terms;
 
-        public Cumulative(string maj, string min, float s, Term t)
+        public Cumulative()
         {
-            major = maj;
-            minor = min;
-            scale = s;
-            terms = new Term[] { t };
+            this.terms = new Term[0];
+        }
+        public Cumulative(Term term)
+        {
+            this.terms = new Term[] { term };
         }
         public void Insert(Term t)
         {
             Array.Resize<Term>(ref terms, terms.Length + 1);
             terms[terms.Length - 1] = t;
+        }
+        public Term[] Search(int year)
+        {
+            Term[] matchingYear = Array.FindAll(terms, element => element.getYear() == year);
+            return matchingYear;
+        }
+        public bool IsEmpty()
+        {
+            if (terms.Length == 0)
+                return true;
+            return false;
         }
     }
 }
