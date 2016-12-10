@@ -14,21 +14,22 @@ namespace smart_gpa_calculator
     {
         // Variables we want accessible in all the panels
         // (these are temporaries used for transferring data and pre-populating fields)
-        string major;
-        string minor;
-        string termSeason;
-        int year;
-        string termLength;
-        string dept;
-        int courseNum;
-        string courseName;
-        int numCredits;
-        float actual;
-        float outOf;
-        string category;
+        private string major;
+        private string minor;
+        private string termSeason;
+        private int year;
+        private string termLength;
+        private string dept;
+        private int courseNum;
+        private string courseName;
+        private int numCredits;
+        private float actual;
+        private float outOf;
+        private string category;
 
         // This holds all the terms, and each Term holds some courses
-        Cumulative all;
+        private Cumulative all;
+        private Term[] terms;
 
         public mainForm()
         {
@@ -51,5 +52,6 @@ namespace smart_gpa_calculator
             // Then place the Term in Cumulative if it doesn't exist
 
         }
+        
     }
 }
