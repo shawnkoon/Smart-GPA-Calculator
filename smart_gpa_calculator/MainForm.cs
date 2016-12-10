@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,10 +56,54 @@ namespace smart_gpa_calculator
 
         /// <summary>
         ///     Opens .csv file then create appropriate objects. to display.
+        ///     Used : https://msdn.microsoft.com/en-us/library/system.windows.forms.openfiledialog(v=vs.110).aspx
         /// </summary>
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            StreamReader myStream = null;
 
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.InitialDirectory = "c:\\";
+            openFileDialog.Filter = "csv files (*.csv)|*.csv";
+            openFileDialog.RestoreDirectory = true;
+
+            if(openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    if((myStream = new StreamReader( openFileDialog.OpenFile() ) ) != null)
+                    {
+                        // Used : https://msdn.microsoft.com/en-us/library/system.io.stream(v=vs.110).aspx
+                        using (myStream)
+                        {
+                            // Should be in : Year, Term, Course Name, Course Abb, Course Number, GPA
+                            string[] columnTitles = myStream.ReadLine().Split(',');
+
+                            if(columnTitles.Length != 6)
+                            {
+                                string line;
+
+                                while((line = myStream.ReadLine()) != null)
+                                {
+                                    
+                                    string[] courseInfo = line.Split(',');
+
+                                    Course course = new Course(courseInfo[3], Int32.Parse(courseInfo[4]) , courseInfo[2], Double.Parse(courseInfo[5]) );
+                                }
+                            }
+                            else
+                            {
+                                throw new Exception("csv in wrong format.");
+                            }
+                        }
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Error: could not read file from disk. Detail :" + ex.Message);
+                }
+            }
         }
 
         /// <summary>

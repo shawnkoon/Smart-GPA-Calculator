@@ -8,21 +8,17 @@ namespace smart_gpa_calculator
 {
     class Course
     {
-        private string dept;
-        private int courseNum;
+        private string department;
+        private int courseNumber;
         private string courseName;
-        private int numCredits;
-        private float actual;
-        private string category;
+        private double actualCredit;
 
-        public Course(string d, int cNum, string cName, int nCredits, float a, string c)
+        public Course(string department, int courseNumber, string courseName,  double actualCredit)
         {
-            dept = d;
-            courseNum = cNum;
-            courseName = cName;
-            numCredits = nCredits;
-            actual = a;
-            category = c;
+            this.department = department;
+            this.courseNumber = courseNumber;
+            this.courseName = courseName;
+            this.actualCredit = actualCredit;
         }
     }
 }

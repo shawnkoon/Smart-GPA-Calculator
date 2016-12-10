@@ -10,19 +10,17 @@ namespace smart_gpa_calculator
     {
         private string termSeason;
         private int year;
-        private string termLength;
         private Course[] courses;
 
         public Term()
         {
             courses = new Course[0];
         }
-        public Term(string tS, int y, string tL, Course c)
+        public Term(string termSeason, int year, Course courses)
         {
-            termSeason = tS;
-            year = y;
-            termLength = tL;
-            courses = new Course[] { c };
+            this.termSeason = termSeason;
+            this.year = year;
+            this.courses = new Course[] { courses };
         }
 
         public void Insert(Course c)
