@@ -81,8 +81,7 @@
             this.majorCreditsLabel = new System.Windows.Forms.Label();
             this.majorLabel = new System.Windows.Forms.Label();
             this.cumulativeLabel = new System.Windows.Forms.Label();
-            this.overviewExplanationLabel = new System.Windows.Forms.Label();
-            this.termListScrollBar = new System.Windows.Forms.VScrollBar();
+            this.coursesTextBox = new System.Windows.Forms.TextBox();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
@@ -125,19 +124,21 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -153,13 +154,13 @@
             // howToToolStripMenuItem
             // 
             this.howToToolStripMenuItem.Name = "howToToolStripMenuItem";
-            this.howToToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.howToToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.howToToolStripMenuItem.Text = "How to";
             // 
             // creditToolStripMenuItem
             // 
             this.creditToolStripMenuItem.Name = "creditToolStripMenuItem";
-            this.creditToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.creditToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.creditToolStripMenuItem.Text = "Credit";
             // 
             // splitContainerBase
@@ -229,7 +230,7 @@
             // numCreditsUpDown
             // 
             this.numCreditsUpDown.DecimalPlaces = 1;
-            this.numCreditsUpDown.Location = new System.Drawing.Point(202, 198);
+            this.numCreditsUpDown.Location = new System.Drawing.Point(202, 226);
             this.numCreditsUpDown.Maximum = new decimal(new int[] {
             10,
             0,
@@ -248,7 +249,7 @@
             // 
             this.numCreditsLabel.AutoSize = true;
             this.numCreditsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numCreditsLabel.Location = new System.Drawing.Point(15, 199);
+            this.numCreditsLabel.Location = new System.Drawing.Point(15, 227);
             this.numCreditsLabel.Name = "numCreditsLabel";
             this.numCreditsLabel.Size = new System.Drawing.Size(180, 16);
             this.numCreditsLabel.TabIndex = 23;
@@ -261,7 +262,7 @@
             "Major",
             "Minor",
             "(General)"});
-            this.applicableComboBox.Location = new System.Drawing.Point(411, 234);
+            this.applicableComboBox.Location = new System.Drawing.Point(411, 262);
             this.applicableComboBox.Name = "applicableComboBox";
             this.applicableComboBox.Size = new System.Drawing.Size(86, 21);
             this.applicableComboBox.TabIndex = 11;
@@ -271,7 +272,7 @@
             // 
             this.applicableLabel.AutoSize = true;
             this.applicableLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.applicableLabel.Location = new System.Drawing.Point(207, 234);
+            this.applicableLabel.Location = new System.Drawing.Point(207, 262);
             this.applicableLabel.Name = "applicableLabel";
             this.applicableLabel.Size = new System.Drawing.Size(198, 16);
             this.applicableLabel.TabIndex = 10;
@@ -279,7 +280,7 @@
             // 
             // addClassButton
             // 
-            this.addClassButton.Location = new System.Drawing.Point(221, 285);
+            this.addClassButton.Location = new System.Drawing.Point(221, 313);
             this.addClassButton.Name = "addClassButton";
             this.addClassButton.Size = new System.Drawing.Size(75, 23);
             this.addClassButton.TabIndex = 12;
@@ -291,7 +292,7 @@
             // 
             this.outOfLabel.AutoSize = true;
             this.outOfLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outOfLabel.Location = new System.Drawing.Point(166, 257);
+            this.outOfLabel.Location = new System.Drawing.Point(166, 285);
             this.outOfLabel.Name = "outOfLabel";
             this.outOfLabel.Size = new System.Drawing.Size(35, 9);
             this.outOfLabel.TabIndex = 27;
@@ -301,7 +302,7 @@
             // 
             this.actualLabel.AutoSize = true;
             this.actualLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.actualLabel.Location = new System.Drawing.Point(106, 257);
+            this.actualLabel.Location = new System.Drawing.Point(106, 285);
             this.actualLabel.Name = "actualLabel";
             this.actualLabel.Size = new System.Drawing.Size(36, 9);
             this.actualLabel.TabIndex = 26;
@@ -311,7 +312,7 @@
             // 
             this.slashLabel.AutoSize = true;
             this.slashLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slashLabel.Location = new System.Drawing.Point(148, 235);
+            this.slashLabel.Location = new System.Drawing.Point(148, 263);
             this.slashLabel.Name = "slashLabel";
             this.slashLabel.Size = new System.Drawing.Size(12, 16);
             this.slashLabel.TabIndex = 25;
@@ -319,14 +320,14 @@
             // 
             // outOfTextBox
             // 
-            this.outOfTextBox.Location = new System.Drawing.Point(166, 234);
+            this.outOfTextBox.Location = new System.Drawing.Point(166, 262);
             this.outOfTextBox.Name = "outOfTextBox";
             this.outOfTextBox.Size = new System.Drawing.Size(34, 20);
             this.outOfTextBox.TabIndex = 23;
             // 
             // actualTextBox
             // 
-            this.actualTextBox.Location = new System.Drawing.Point(108, 234);
+            this.actualTextBox.Location = new System.Drawing.Point(108, 262);
             this.actualTextBox.Name = "actualTextBox";
             this.actualTextBox.Size = new System.Drawing.Size(34, 20);
             this.actualTextBox.TabIndex = 9;
@@ -335,7 +336,7 @@
             // 
             this.gradeLabel.AutoSize = true;
             this.gradeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gradeLabel.Location = new System.Drawing.Point(15, 235);
+            this.gradeLabel.Location = new System.Drawing.Point(15, 263);
             this.gradeLabel.Name = "gradeLabel";
             this.gradeLabel.Size = new System.Drawing.Size(83, 16);
             this.gradeLabel.TabIndex = 24;
@@ -343,7 +344,7 @@
             // 
             // courseNameTextBox
             // 
-            this.courseNameTextBox.Location = new System.Drawing.Point(164, 161);
+            this.courseNameTextBox.Location = new System.Drawing.Point(164, 189);
             this.courseNameTextBox.Name = "courseNameTextBox";
             this.courseNameTextBox.Size = new System.Drawing.Size(200, 20);
             this.courseNameTextBox.TabIndex = 7;
@@ -352,7 +353,7 @@
             // 
             this.courseNameLabel.AutoSize = true;
             this.courseNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.courseNameLabel.Location = new System.Drawing.Point(15, 162);
+            this.courseNameLabel.Location = new System.Drawing.Point(15, 190);
             this.courseNameLabel.Name = "courseNameLabel";
             this.courseNameLabel.Size = new System.Drawing.Size(149, 16);
             this.courseNameLabel.TabIndex = 22;
@@ -362,7 +363,7 @@
             // 
             this.courseNumLabel.AutoSize = true;
             this.courseNumLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.courseNumLabel.Location = new System.Drawing.Point(244, 141);
+            this.courseNumLabel.Location = new System.Drawing.Point(244, 169);
             this.courseNumLabel.Name = "courseNumLabel";
             this.courseNumLabel.Size = new System.Drawing.Size(40, 9);
             this.courseNumLabel.TabIndex = 21;
@@ -372,7 +373,7 @@
             // 
             this.deptLabel.AutoSize = true;
             this.deptLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deptLabel.Location = new System.Drawing.Point(181, 141);
+            this.deptLabel.Location = new System.Drawing.Point(181, 169);
             this.deptLabel.Name = "deptLabel";
             this.deptLabel.Size = new System.Drawing.Size(26, 9);
             this.deptLabel.TabIndex = 20;
@@ -380,7 +381,7 @@
             // 
             // courseNumTextBox
             // 
-            this.courseNumTextBox.Location = new System.Drawing.Point(246, 118);
+            this.courseNumTextBox.Location = new System.Drawing.Point(246, 146);
             this.courseNumTextBox.Name = "courseNumTextBox";
             this.courseNumTextBox.Size = new System.Drawing.Size(49, 20);
             this.courseNumTextBox.TabIndex = 6;
@@ -389,7 +390,7 @@
             // 
             this.courseIdLabel.AutoSize = true;
             this.courseIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.courseIdLabel.Location = new System.Drawing.Point(15, 122);
+            this.courseIdLabel.Location = new System.Drawing.Point(15, 150);
             this.courseIdLabel.Name = "courseIdLabel";
             this.courseIdLabel.Size = new System.Drawing.Size(162, 16);
             this.courseIdLabel.TabIndex = 19;
@@ -397,7 +398,7 @@
             // 
             // deptTextBox
             // 
-            this.deptTextBox.Location = new System.Drawing.Point(183, 118);
+            this.deptTextBox.Location = new System.Drawing.Point(183, 146);
             this.deptTextBox.Name = "deptTextBox";
             this.deptTextBox.Size = new System.Drawing.Size(46, 20);
             this.deptTextBox.TabIndex = 5;
@@ -408,7 +409,7 @@
             this.quarterSemesterComboBox.Items.AddRange(new object[] {
             "Quarter",
             "Semester"});
-            this.quarterSemesterComboBox.Location = new System.Drawing.Point(387, 82);
+            this.quarterSemesterComboBox.Location = new System.Drawing.Point(387, 110);
             this.quarterSemesterComboBox.Name = "quarterSemesterComboBox";
             this.quarterSemesterComboBox.Size = new System.Drawing.Size(91, 21);
             this.quarterSemesterComboBox.TabIndex = 4;
@@ -416,7 +417,7 @@
             // 
             // yearUpDown
             // 
-            this.yearUpDown.Location = new System.Drawing.Point(315, 83);
+            this.yearUpDown.Location = new System.Drawing.Point(315, 111);
             this.yearUpDown.Maximum = new decimal(new int[] {
             2030,
             0,
@@ -444,7 +445,7 @@
             "Winter",
             "Spring",
             "Summer"});
-            this.termSeasonComboBox.Location = new System.Drawing.Point(219, 82);
+            this.termSeasonComboBox.Location = new System.Drawing.Point(219, 110);
             this.termSeasonComboBox.Name = "termSeasonComboBox";
             this.termSeasonComboBox.Size = new System.Drawing.Size(88, 21);
             this.termSeasonComboBox.TabIndex = 2;
@@ -454,7 +455,7 @@
             // 
             this.termLabel.AutoSize = true;
             this.termLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.termLabel.Location = new System.Drawing.Point(15, 83);
+            this.termLabel.Location = new System.Drawing.Point(15, 111);
             this.termLabel.Name = "termLabel";
             this.termLabel.Size = new System.Drawing.Size(198, 16);
             this.termLabel.TabIndex = 18;
@@ -533,8 +534,7 @@
             // splitContainerRight.Panel2
             // 
             this.splitContainerRight.Panel2.BackColor = System.Drawing.Color.Ivory;
-            this.splitContainerRight.Panel2.Controls.Add(this.overviewExplanationLabel);
-            this.splitContainerRight.Panel2.Controls.Add(this.termListScrollBar);
+            this.splitContainerRight.Panel2.Controls.Add(this.coursesTextBox);
             this.splitContainerRight.Size = new System.Drawing.Size(382, 567);
             this.splitContainerRight.SplitterDistance = 186;
             this.splitContainerRight.TabIndex = 0;
@@ -543,7 +543,7 @@
             // 
             this.overallPointsLabel.AutoSize = true;
             this.overallPointsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.overallPointsLabel.Location = new System.Drawing.Point(194, 142);
+            this.overallPointsLabel.Location = new System.Drawing.Point(249, 142);
             this.overallPointsLabel.Name = "overallPointsLabel";
             this.overallPointsLabel.Size = new System.Drawing.Size(15, 16);
             this.overallPointsLabel.TabIndex = 15;
@@ -553,7 +553,7 @@
             // 
             this.minorPointsLabel.AutoSize = true;
             this.minorPointsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minorPointsLabel.Location = new System.Drawing.Point(194, 115);
+            this.minorPointsLabel.Location = new System.Drawing.Point(249, 115);
             this.minorPointsLabel.Name = "minorPointsLabel";
             this.minorPointsLabel.Size = new System.Drawing.Size(15, 16);
             this.minorPointsLabel.TabIndex = 14;
@@ -563,7 +563,7 @@
             // 
             this.majorPointsLabel.AutoSize = true;
             this.majorPointsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.majorPointsLabel.Location = new System.Drawing.Point(194, 84);
+            this.majorPointsLabel.Location = new System.Drawing.Point(249, 84);
             this.majorPointsLabel.Name = "majorPointsLabel";
             this.majorPointsLabel.Size = new System.Drawing.Size(15, 16);
             this.majorPointsLabel.TabIndex = 13;
@@ -572,7 +572,7 @@
             // gpaLabel
             // 
             this.gpaLabel.AutoSize = true;
-            this.gpaLabel.Location = new System.Drawing.Point(247, 59);
+            this.gpaLabel.Location = new System.Drawing.Point(302, 59);
             this.gpaLabel.Name = "gpaLabel";
             this.gpaLabel.Size = new System.Drawing.Size(29, 13);
             this.gpaLabel.TabIndex = 12;
@@ -581,7 +581,7 @@
             // pointsLabel
             // 
             this.pointsLabel.AutoSize = true;
-            this.pointsLabel.Location = new System.Drawing.Point(173, 59);
+            this.pointsLabel.Location = new System.Drawing.Point(228, 59);
             this.pointsLabel.Name = "pointsLabel";
             this.pointsLabel.Size = new System.Drawing.Size(36, 13);
             this.pointsLabel.TabIndex = 11;
@@ -590,7 +590,7 @@
             // creditsLabel
             // 
             this.creditsLabel.AutoSize = true;
-            this.creditsLabel.Location = new System.Drawing.Point(101, 59);
+            this.creditsLabel.Location = new System.Drawing.Point(156, 59);
             this.creditsLabel.Name = "creditsLabel";
             this.creditsLabel.Size = new System.Drawing.Size(39, 13);
             this.creditsLabel.TabIndex = 10;
@@ -600,7 +600,7 @@
             // 
             this.overallGpaLabel.AutoSize = true;
             this.overallGpaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.overallGpaLabel.Location = new System.Drawing.Point(251, 142);
+            this.overallGpaLabel.Location = new System.Drawing.Point(306, 142);
             this.overallGpaLabel.Name = "overallGpaLabel";
             this.overallGpaLabel.Size = new System.Drawing.Size(25, 16);
             this.overallGpaLabel.TabIndex = 9;
@@ -610,7 +610,7 @@
             // 
             this.overallCreditLabel.AutoSize = true;
             this.overallCreditLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.overallCreditLabel.Location = new System.Drawing.Point(121, 142);
+            this.overallCreditLabel.Location = new System.Drawing.Point(176, 142);
             this.overallCreditLabel.Name = "overallCreditLabel";
             this.overallCreditLabel.Size = new System.Drawing.Size(15, 16);
             this.overallCreditLabel.TabIndex = 8;
@@ -620,7 +620,7 @@
             // 
             this.overallLabel.AutoSize = true;
             this.overallLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.overallLabel.Location = new System.Drawing.Point(12, 142);
+            this.overallLabel.Location = new System.Drawing.Point(67, 142);
             this.overallLabel.Name = "overallLabel";
             this.overallLabel.Size = new System.Drawing.Size(51, 16);
             this.overallLabel.TabIndex = 7;
@@ -630,7 +630,7 @@
             // 
             this.minorGpaLabel.AutoSize = true;
             this.minorGpaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minorGpaLabel.Location = new System.Drawing.Point(251, 114);
+            this.minorGpaLabel.Location = new System.Drawing.Point(306, 114);
             this.minorGpaLabel.Name = "minorGpaLabel";
             this.minorGpaLabel.Size = new System.Drawing.Size(25, 16);
             this.minorGpaLabel.TabIndex = 6;
@@ -640,7 +640,7 @@
             // 
             this.minorCreditsLabel.AutoSize = true;
             this.minorCreditsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minorCreditsLabel.Location = new System.Drawing.Point(121, 114);
+            this.minorCreditsLabel.Location = new System.Drawing.Point(176, 114);
             this.minorCreditsLabel.Name = "minorCreditsLabel";
             this.minorCreditsLabel.Size = new System.Drawing.Size(15, 16);
             this.minorCreditsLabel.TabIndex = 5;
@@ -650,7 +650,7 @@
             // 
             this.minorLabel.AutoSize = true;
             this.minorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minorLabel.Location = new System.Drawing.Point(11, 114);
+            this.minorLabel.Location = new System.Drawing.Point(66, 114);
             this.minorLabel.Name = "minorLabel";
             this.minorLabel.Size = new System.Drawing.Size(85, 16);
             this.minorLabel.TabIndex = 4;
@@ -660,7 +660,7 @@
             // 
             this.majorGpaLabel.AutoSize = true;
             this.majorGpaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.majorGpaLabel.Location = new System.Drawing.Point(251, 84);
+            this.majorGpaLabel.Location = new System.Drawing.Point(306, 84);
             this.majorGpaLabel.Name = "majorGpaLabel";
             this.majorGpaLabel.Size = new System.Drawing.Size(25, 16);
             this.majorGpaLabel.TabIndex = 3;
@@ -670,7 +670,7 @@
             // 
             this.majorCreditsLabel.AutoSize = true;
             this.majorCreditsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.majorCreditsLabel.Location = new System.Drawing.Point(121, 84);
+            this.majorCreditsLabel.Location = new System.Drawing.Point(176, 84);
             this.majorCreditsLabel.Name = "majorCreditsLabel";
             this.majorCreditsLabel.Size = new System.Drawing.Size(15, 16);
             this.majorCreditsLabel.TabIndex = 2;
@@ -680,7 +680,7 @@
             // 
             this.majorLabel.AutoSize = true;
             this.majorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.majorLabel.Location = new System.Drawing.Point(11, 84);
+            this.majorLabel.Location = new System.Drawing.Point(66, 84);
             this.majorLabel.Name = "majorLabel";
             this.majorLabel.Size = new System.Drawing.Size(75, 16);
             this.majorLabel.TabIndex = 1;
@@ -696,21 +696,16 @@
             this.cumulativeLabel.TabIndex = 0;
             this.cumulativeLabel.Text = "Cumulative";
             // 
-            // overviewExplanationLabel
+            // coursesTextBox
             // 
-            this.overviewExplanationLabel.AutoSize = true;
-            this.overviewExplanationLabel.Location = new System.Drawing.Point(94, 40);
-            this.overviewExplanationLabel.Name = "overviewExplanationLabel";
-            this.overviewExplanationLabel.Size = new System.Drawing.Size(171, 13);
-            this.overviewExplanationLabel.TabIndex = 1;
-            this.overviewExplanationLabel.Text = "List of Term Overviews will be here";
-            // 
-            // termListScrollBar
-            // 
-            this.termListScrollBar.Location = new System.Drawing.Point(365, 0);
-            this.termListScrollBar.Name = "termListScrollBar";
-            this.termListScrollBar.Size = new System.Drawing.Size(17, 377);
-            this.termListScrollBar.TabIndex = 0;
+            this.coursesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.coursesTextBox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.coursesTextBox.Location = new System.Drawing.Point(0, 0);
+            this.coursesTextBox.Multiline = true;
+            this.coursesTextBox.Name = "coursesTextBox";
+            this.coursesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.coursesTextBox.Size = new System.Drawing.Size(382, 377);
+            this.coursesTextBox.TabIndex = 1;
             // 
             // mainForm
             // 
@@ -787,7 +782,6 @@
         private System.Windows.Forms.Label graphExplanationLabel;
         private System.Windows.Forms.SplitContainer splitContainerRight;
         private System.Windows.Forms.Label cumulativeLabel;
-        private System.Windows.Forms.VScrollBar termListScrollBar;
         private System.Windows.Forms.Label majorLabel;
         private System.Windows.Forms.Label overallCreditLabel;
         private System.Windows.Forms.Label overallLabel;
@@ -797,7 +791,6 @@
         private System.Windows.Forms.Label majorGpaLabel;
         private System.Windows.Forms.Label majorCreditsLabel;
         private System.Windows.Forms.Label overallGpaLabel;
-        private System.Windows.Forms.Label overviewExplanationLabel;
         private System.Windows.Forms.Label gpaLabel;
         private System.Windows.Forms.Label pointsLabel;
         private System.Windows.Forms.Label creditsLabel;
@@ -806,6 +799,7 @@
         private System.Windows.Forms.Label majorPointsLabel;
         private System.Windows.Forms.NumericUpDown numCreditsUpDown;
         private System.Windows.Forms.Label numCreditsLabel;
+        private System.Windows.Forms.TextBox coursesTextBox;
     }
 }
 

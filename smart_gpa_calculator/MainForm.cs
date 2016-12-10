@@ -52,6 +52,22 @@ namespace smart_gpa_calculator
             // Then place the Term in Cumulative if it doesn't exist
 
         }
+
+        /// <summary>
+        ///     Opens .csv file then create appropriate objects. to display.
+        /// </summary>
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        ///     Saves what is currently typed/loaded out to the file.
+        /// </summary>
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
         
     }
 }
