@@ -25,7 +25,7 @@ namespace smart_gpa_calculator
         public override string ToString()
         {
             string output = "";
-            output += department + " " + courseNumber + " " + courseName + " Grade: " + actualCredit + " Hours: " + creditHours + "\r\n";
+            output += department + " " + courseNumber + " " + courseName + " Grade: " + actualGPA + " Hours: " + creditHours + "\r\n";
             return output;
         }
     }
