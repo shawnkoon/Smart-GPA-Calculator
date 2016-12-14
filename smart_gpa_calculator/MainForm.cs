@@ -32,8 +32,7 @@ namespace smart_gpa_calculator
          * */
 
         // This holds all the terms, and each Term holds some courses
-        private Cumulative all;
-        private Term[] terms;
+        private Cumulative all = new Cumulative();
 
         public mainForm()
         {
@@ -53,7 +52,7 @@ namespace smart_gpa_calculator
         private void addClassButton_Click(object sender, EventArgs e)
         {
             // Take all the input from the submission form and put them in the temp variables.
-            termSeason = termSeasonComboBox.SelectedText;
+            termSeason = termSeasonComboBox.Text;
             year = Convert.ToInt32(yearUpDown.Value); //Doesn't need a catch since input is forced to be proper
             dept = deptTextBox.Text;
             courseNum = Convert.ToInt32(courseNumUpDown.Value);
@@ -61,38 +60,53 @@ namespace smart_gpa_calculator
             numCredits = Convert.ToInt32(numCreditsUpDown.Value);
             grade = Convert.ToInt32(gradeUpDown.Value);
 
-            // Then place them in a course
-            Course curCourse = new Course(dept, courseNum, courseName, numCredits, grade);
+            if ( validatedTerms() )
+            {
+                // Then place them in a course
+                Course curCourse = new Course(dept, courseNum, courseName, grade, numCredits);
 
-            // Place the course in a Term, and the Term in Cumulative (if it isn't already existing)
-            Term[] matchingYear = all.Search(year);
-            if(matchingYear == null) // Create a new term and insert this course in it
-            {
-                Term newTerm = new Term(termSeason, year, curCourse);
-                if (all.IsEmpty()) // I think Insert logic might work for both cases
-                    all = new Cumulative(newTerm);
-                else
-                    all.Insert(newTerm);
-            }
-            else // Classes already exist in this year; check for the specific term further using season
-            {
-                Term matchingSeason = Array.Find(matchingYear, element => String.Equals(element.getSeason(), termSeason));
-                if (matchingSeason == null) //Logic same as above -- create a new term, insert into Cumulative (create if nots exists)
+                // Place the course in a Term, and the Term in Cumulative (if it isn't already existing)
+                Term[] matchingYear = all.Search(year);
+                if (matchingYear == null) // Create a new term and insert this course in it
                 {
-                    Term newTerm = new Term(termSeason, year, curCourse); // Same logic as above
+                    Term newTerm = new Term(termSeason, year, curCourse);
                     if (all.IsEmpty()) // I think Insert logic might work for both cases
                         all = new Cumulative(newTerm);
                     else
                         all.Insert(newTerm);
                 }
-                else
+                else // Classes already exist in this year; check for the specific term further using season
                 {
-                    matchingSeason.Insert(curCourse); // The Term existed and just needs a class inserted
+                    Term matchingSeason = Array.Find(matchingYear, element => String.Equals(element.getSeason(), termSeason));
+                    if (matchingSeason == null) //Logic same as above -- create a new term, insert into Cumulative (create if nots exists)
+                    {
+                        Term newTerm = new Term(termSeason, year, curCourse); // Same logic as above
+                        if (all.IsEmpty()) // I think Insert logic might work for both cases
+                            all = new Cumulative(newTerm);
+                        else
+                            all.Insert(newTerm);
+                    }
+                    else
+                    {
+                        matchingSeason.Insert(curCourse); // The Term existed and just needs a class inserted
+                    }
                 }
-            }
 
-            //Update the Right two panels with the new info
+                //Update the Right two panels with the new info
+                // -- This part is not done yet (we probably need a doCalculation function) --
+                MessageBox.Show(all.ToString());
+                //I want to sort first by year then by termSeason (Term), first by dept then by courseNum (Courses)
 
+                //Clear the form and reset the Focus
+                termSeasonComboBox.Text = "Term";
+                yearUpDown.Value = 2017;
+                deptTextBox.Text = "";
+                courseNumUpDown.Value = 100;
+                courseNameTextBox.Text = "";
+                numCreditsUpDown.Value = 5;
+                gradeUpDown.Value = 0;
+                termSeasonComboBox.Focus();
+            } //end if( validatedTerms() )
         }
 
         /// <summary>
@@ -130,7 +144,8 @@ namespace smart_gpa_calculator
                                     
                                     string[] courseInfo = line.Split(',');
 
-                                    Course course = new Course(courseInfo[3], Int32.Parse(courseInfo[4]) , courseInfo[2], Double.Parse(courseInfo[5]) );
+                                    //Course course = new Course(courseInfo[3], Int32.Parse(courseInfo[4]) , courseInfo[2], Double.Parse(courseInfo[5]) );
+                                    // Needs a fifth parameter according to last change
                                 }
                             }
                             else
@@ -154,6 +169,34 @@ namespace smart_gpa_calculator
         {
 
         }
-        
+        private bool validatedTerms()
+        {
+            bool validated = true;
+            string message = "";
+            if (termSeason != "Fall" && termSeason != "Winter" && termSeason != "Spring" && termSeason != "Summer")
+            {
+                message += "-Term must be a Season from the DropDown list.\r\n";
+                validated = false;
+                termSeasonComboBox.Focus();
+            }
+            if (dept == "")
+            {
+                message += "-Department Identifier must be given. E.g. 'MATH&'\r\n";
+                validated = false;
+                if(message[1] == 'D')
+                    deptTextBox.Focus();
+            }
+            if (courseName == "")
+            {
+                message += "-Course Name must be given.";
+                validated = false;
+                if (message[1] == 'C')
+                    courseNameTextBox.Focus();
+            }
+
+            if (!validated)
+                MessageBox.Show(message);
+            return validated;
+        }
     }
 }
