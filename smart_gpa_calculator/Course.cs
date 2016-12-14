@@ -11,14 +11,16 @@ namespace smart_gpa_calculator
         private string department;
         private int courseNumber;
         private string courseName;
-        private double actualCredit;
+        private double actualGPA;
+        private double creditHours;
 
-        public Course(string department, int courseNumber, string courseName,  double actualCredit)
+        public Course(string department, int courseNumber, string courseName,  double actualGPA, double creditHours)
         {
             this.department = department;
             this.courseNumber = courseNumber;
             this.courseName = courseName;
-            this.actualCredit = actualCredit;
+            this.actualGPA = actualGPA;
+            this.creditHours = creditHours;
         }
     }
 }

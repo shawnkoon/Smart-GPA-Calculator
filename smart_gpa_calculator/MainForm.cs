@@ -118,10 +118,10 @@ namespace smart_gpa_calculator
                         // Used : https://msdn.microsoft.com/en-us/library/system.io.stream(v=vs.110).aspx
                         using (myStream)
                         {
-                            // Should be in : Year, Term, Course Name, Course Abb, Course Number, GPA
+                            // Should be in : Year, Term, Course Name, Course Abb, Course Number, GPA, Credit Hours
                             string[] columnTitles = myStream.ReadLine().Split(',');
 
-                            if(columnTitles.Length != 6)
+                            if(columnTitles.Length != 7)
                             {
                                 string line;
 
@@ -130,7 +130,8 @@ namespace smart_gpa_calculator
                                     
                                     string[] courseInfo = line.Split(',');
 
-                                    Course course = new Course(courseInfo[3], Int32.Parse(courseInfo[4]) , courseInfo[2], Double.Parse(courseInfo[5]) );
+                                    Course course = new Course(courseInfo[3], Int32.Parse(courseInfo[4]) , courseInfo[2], Double.Parse(courseInfo[5]), Double.Parse(courseInfo[6]) );
+
                                 }
                             }
                             else
