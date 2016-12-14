@@ -16,11 +16,11 @@ namespace smart_gpa_calculator
         {
             courses = new Course[0];
         }
-        public Term(string termSeason, int year, Course courses)
+        public Term(string termSeason, int year, Course course)
         {
             this.termSeason = termSeason;
             this.year = year;
-            this.courses = new Course[] { courses };
+            this.courses = new Course[] { course };
         }
 
         public void Insert(Course c)
@@ -35,6 +35,17 @@ namespace smart_gpa_calculator
         public int getYear()
         {
             return year;
+        }
+        public override string ToString()
+        {
+            string output = "";
+            output += termSeason + " " + year + "\r\n";
+            foreach(Course course in courses)
+            {
+                output += course.ToString();
+            }
+            output += "\r\n";
+            return output;
         }
     }
 }

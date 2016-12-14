@@ -40,5 +40,15 @@ namespace smart_gpa_calculator
                 return true;
             return false;
         }
+        public override string ToString()
+        {
+            string output = "";
+            output += "Cumulative:\r\n";
+            foreach (Term term in terms)
+            {
+                output += term.ToString();
+            }
+            return output;
+        }
     }
 }
