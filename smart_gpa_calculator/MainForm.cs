@@ -20,8 +20,8 @@ namespace smart_gpa_calculator
         private string dept;
         private int courseNum;
         private string courseName;
-        private int numCredits;
-        private float grade;
+        private double numCredits;
+        private double grade;
 
         /* These are all "One Time" values, and we will worry about how we want to gather these later (What class is it a member of)
          * private string major; -- May want to change this so User can have more than one (Cumulative)
@@ -58,7 +58,7 @@ namespace smart_gpa_calculator
             courseNum = Convert.ToInt32(courseNumUpDown.Value);
             courseName = courseNameTextBox.Text;
             numCredits = Convert.ToInt32(numCreditsUpDown.Value);
-            grade = Convert.ToInt32(gradeUpDown.Value);
+            grade = Convert.ToDouble(gradeUpDown.Value);
 
             if ( validatedTerms() )
             {
@@ -77,7 +77,7 @@ namespace smart_gpa_calculator
                 }
                 else // Classes already exist in this year; check for the specific term further using season
                 {
-                    Term matchingSeason = Array.Find(matchingYear, element => String.Equals(element.getSeason(), termSeason));
+                    Term matchingSeason = Array.Find(matchingYear, element => String.Equals(element.GetSeason(), termSeason));
                     if (matchingSeason == null) //Logic same as above -- create a new term, insert into Cumulative (create if nots exists)
                     {
                         Term newTerm = new Term(termSeason, year, curCourse); // Same logic as above
@@ -94,7 +94,11 @@ namespace smart_gpa_calculator
 
                 //Update the Right two panels with the new info
                 // -- This part is not done yet (we probably need a doCalculation function) --
+                all.Calculate();
                 MessageBox.Show(all.ToString());
+                overallCreditLabel.Text = all.GetHours().ToString();
+                overallPointsLabel.Text = all.GetPoints().ToString("0.00");
+                overallGpaLabel.Text = all.GetGPA().ToString("0.00");
                 //I want to sort first by year then by termSeason (Term), first by dept then by courseNum (Courses)
 
                 //Clear the form and reset the Focus

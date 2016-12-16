@@ -38,6 +38,7 @@
             this.creditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainerBase = new System.Windows.Forms.SplitContainer();
             this.splitContainerLeft = new System.Windows.Forms.SplitContainer();
+            this.gradeUpDown = new System.Windows.Forms.NumericUpDown();
             this.courseNumUpDown = new System.Windows.Forms.NumericUpDown();
             this.numCreditsUpDown = new System.Windows.Forms.NumericUpDown();
             this.numCreditsLabel = new System.Windows.Forms.Label();
@@ -74,7 +75,6 @@
             this.majorLabel = new System.Windows.Forms.Label();
             this.cumulativeLabel = new System.Windows.Forms.Label();
             this.coursesTextBox = new System.Windows.Forms.TextBox();
-            this.gradeUpDown = new System.Windows.Forms.NumericUpDown();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
@@ -84,6 +84,7 @@
             this.splitContainerLeft.Panel1.SuspendLayout();
             this.splitContainerLeft.Panel2.SuspendLayout();
             this.splitContainerLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gradeUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseNumUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCreditsUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearUpDown)).BeginInit();
@@ -91,7 +92,6 @@
             this.splitContainerRight.Panel1.SuspendLayout();
             this.splitContainerRight.Panel2.SuspendLayout();
             this.splitContainerRight.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gradeUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -214,6 +214,24 @@
             this.splitContainerLeft.Size = new System.Drawing.Size(512, 567);
             this.splitContainerLeft.SplitterDistance = 355;
             this.splitContainerLeft.TabIndex = 0;
+            // 
+            // gradeUpDown
+            // 
+            this.gradeUpDown.DecimalPlaces = 1;
+            this.gradeUpDown.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.gradeUpDown.Location = new System.Drawing.Point(104, 263);
+            this.gradeUpDown.Maximum = new decimal(new int[] {
+            40,
+            0,
+            0,
+            65536});
+            this.gradeUpDown.Name = "gradeUpDown";
+            this.gradeUpDown.Size = new System.Drawing.Size(46, 20);
+            this.gradeUpDown.TabIndex = 6;
             // 
             // courseNumUpDown
             // 
@@ -467,31 +485,32 @@
             // 
             this.overallPointsLabel.AutoSize = true;
             this.overallPointsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.overallPointsLabel.Location = new System.Drawing.Point(249, 142);
+            this.overallPointsLabel.Location = new System.Drawing.Point(228, 142);
             this.overallPointsLabel.Name = "overallPointsLabel";
-            this.overallPointsLabel.Size = new System.Drawing.Size(15, 16);
+            this.overallPointsLabel.Size = new System.Drawing.Size(32, 16);
             this.overallPointsLabel.TabIndex = 15;
-            this.overallPointsLabel.Text = "0";
+            this.overallPointsLabel.Text = "0.00";
             // 
             // currentPointsLabel
             // 
             this.currentPointsLabel.AutoSize = true;
             this.currentPointsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentPointsLabel.Location = new System.Drawing.Point(249, 115);
+            this.currentPointsLabel.Location = new System.Drawing.Point(228, 114);
             this.currentPointsLabel.Name = "currentPointsLabel";
-            this.currentPointsLabel.Size = new System.Drawing.Size(15, 16);
+            this.currentPointsLabel.Size = new System.Drawing.Size(32, 16);
             this.currentPointsLabel.TabIndex = 14;
-            this.currentPointsLabel.Text = "0";
+            this.currentPointsLabel.Text = "0.00";
             // 
             // lastPointsLabel
             // 
             this.lastPointsLabel.AutoSize = true;
             this.lastPointsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastPointsLabel.Location = new System.Drawing.Point(249, 84);
+            this.lastPointsLabel.Location = new System.Drawing.Point(228, 84);
             this.lastPointsLabel.Name = "lastPointsLabel";
-            this.lastPointsLabel.Size = new System.Drawing.Size(15, 16);
+            this.lastPointsLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lastPointsLabel.Size = new System.Drawing.Size(32, 16);
             this.lastPointsLabel.TabIndex = 13;
-            this.lastPointsLabel.Text = "0";
+            this.lastPointsLabel.Text = "0.00";
             // 
             // gpaLabel
             // 
@@ -524,11 +543,11 @@
             // 
             this.overallGpaLabel.AutoSize = true;
             this.overallGpaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.overallGpaLabel.Location = new System.Drawing.Point(306, 142);
+            this.overallGpaLabel.Location = new System.Drawing.Point(302, 142);
             this.overallGpaLabel.Name = "overallGpaLabel";
-            this.overallGpaLabel.Size = new System.Drawing.Size(25, 16);
+            this.overallGpaLabel.Size = new System.Drawing.Size(32, 16);
             this.overallGpaLabel.TabIndex = 9;
-            this.overallGpaLabel.Text = "0.0";
+            this.overallGpaLabel.Text = "0.00";
             // 
             // overallCreditLabel
             // 
@@ -554,11 +573,11 @@
             // 
             this.currentGpaLabel.AutoSize = true;
             this.currentGpaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentGpaLabel.Location = new System.Drawing.Point(306, 114);
+            this.currentGpaLabel.Location = new System.Drawing.Point(302, 114);
             this.currentGpaLabel.Name = "currentGpaLabel";
-            this.currentGpaLabel.Size = new System.Drawing.Size(25, 16);
+            this.currentGpaLabel.Size = new System.Drawing.Size(32, 16);
             this.currentGpaLabel.TabIndex = 6;
-            this.currentGpaLabel.Text = "0.0";
+            this.currentGpaLabel.Text = "0.00";
             // 
             // currentCreditsLabel
             // 
@@ -584,11 +603,11 @@
             // 
             this.lastGpaLabel.AutoSize = true;
             this.lastGpaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastGpaLabel.Location = new System.Drawing.Point(306, 84);
+            this.lastGpaLabel.Location = new System.Drawing.Point(302, 84);
             this.lastGpaLabel.Name = "lastGpaLabel";
-            this.lastGpaLabel.Size = new System.Drawing.Size(25, 16);
+            this.lastGpaLabel.Size = new System.Drawing.Size(32, 16);
             this.lastGpaLabel.TabIndex = 3;
-            this.lastGpaLabel.Text = "0.0";
+            this.lastGpaLabel.Text = "0.00";
             // 
             // lastCreditsLabel
             // 
@@ -631,24 +650,6 @@
             this.coursesTextBox.Size = new System.Drawing.Size(382, 377);
             this.coursesTextBox.TabIndex = 1;
             // 
-            // gradeUpDown
-            // 
-            this.gradeUpDown.DecimalPlaces = 1;
-            this.gradeUpDown.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.gradeUpDown.Location = new System.Drawing.Point(104, 263);
-            this.gradeUpDown.Maximum = new decimal(new int[] {
-            40,
-            0,
-            0,
-            65536});
-            this.gradeUpDown.Name = "gradeUpDown";
-            this.gradeUpDown.Size = new System.Drawing.Size(46, 20);
-            this.gradeUpDown.TabIndex = 6;
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -674,6 +675,7 @@
             this.splitContainerLeft.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerLeft)).EndInit();
             this.splitContainerLeft.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gradeUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseNumUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCreditsUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearUpDown)).EndInit();
@@ -683,7 +685,6 @@
             this.splitContainerRight.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerRight)).EndInit();
             this.splitContainerRight.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gradeUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

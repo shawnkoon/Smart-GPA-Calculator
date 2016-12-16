@@ -11,16 +11,25 @@ namespace smart_gpa_calculator
         private string termSeason;
         private int year;
         private Course[] courses;
+        private double termGPA;
+        private double termHours;
+        private double termPoints;
 
         public Term()
         {
-            courses = new Course[0];
+            this.courses = new Course[0];
+            this.termGPA = 0.0;
+            this.termHours = 0.0;
+            this.termPoints = 0.0;
         }
         public Term(string termSeason, int year, Course course)
         {
             this.termSeason = termSeason;
             this.year = year;
             this.courses = new Course[] { course };
+            this.termGPA = course.GetGPA();
+            this.termHours = course.GetHours();
+            this.termPoints = course.GetPoints();
         }
 
         public void Insert(Course c)
@@ -28,19 +37,49 @@ namespace smart_gpa_calculator
             Array.Resize<Course>(ref courses, courses.Length + 1);
             courses[courses.Length - 1] = c;
             Array.Sort(courses);
+            Calculate();
         }
-        public string getSeason()
+        public void Calculate()
         {
-            return termSeason;
+            double result;
+            double totalPoints = 0.0;
+            double totalHours = 0.0;
+            foreach(Course course in courses)
+            {
+                totalPoints += (course.GetGPA() * course.GetHours());
+                totalHours += course.GetHours();
+            }
+            result = totalPoints / totalHours;
+            result = Math.Round(result, 2);
+
+            this.termGPA = result;
+            this.termHours = totalHours;
+            this.termPoints = totalPoints; //Math.Round?
         }
-        public int getYear()
+        public string GetSeason()
         {
-            return year;
+            return this.termSeason;
+        }
+        public int GetYear()
+        {
+            return this.year;
+        }
+        public double GetGPA()
+        {
+            return this.termGPA;
+        }
+        public double GetHours()
+        {
+            return this.termHours;
+        }
+        public double GetPoints()
+        {
+            return this.termPoints;
         }
         public override string ToString()
         {
             string output = "";
-            output += termSeason + " " + year + "\r\n";
+            output += termSeason + " " + year + " - " + termGPA.ToString("0.00") + "\r\n";
             foreach(Course course in courses)
             {
                 output += course.ToString();

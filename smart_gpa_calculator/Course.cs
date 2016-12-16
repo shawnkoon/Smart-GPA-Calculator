@@ -22,10 +22,22 @@ namespace smart_gpa_calculator
             this.actualGPA = actualGPA;
             this.creditHours = creditHours;
         }
+        public double GetGPA()
+        {
+            return this.actualGPA;
+        }
+        public double GetHours()
+        {
+            return this.creditHours;
+        }
+        public double GetPoints()
+        {
+            return actualGPA * creditHours;
+        }
         public override string ToString()
         {
             string output = "";
-            output += department + " " + courseNumber + " " + courseName + " Grade: " + actualGPA + " Hours: " + creditHours + "\r\n";
+            output += department + " " + courseNumber + " " + courseName + " Grade: " + actualGPA.ToString("0.0") + " Hours: " + creditHours.ToString("0.0") + "\r\n";
             return output;
         }
         // Sort first by department identifier, then course number
