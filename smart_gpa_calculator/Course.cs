@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace smart_gpa_calculator
 {
-    class Course
+    class Course : IComparable<Course>
     {
         private string department;
         private int courseNumber;
@@ -27,6 +27,14 @@ namespace smart_gpa_calculator
             string output = "";
             output += department + " " + courseNumber + " " + courseName + " Grade: " + actualGPA + " Hours: " + creditHours + "\r\n";
             return output;
+        }
+        // Sort first by department identifier, then course number
+        public int CompareTo(Course that)
+        {
+            int result = this.department.CompareTo(that.department);
+            if (result == 0)
+                result = this.courseNumber - that.courseNumber;
+            return result;
         }
     }
 }

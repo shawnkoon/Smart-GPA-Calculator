@@ -28,6 +28,7 @@ namespace smart_gpa_calculator
         {
             Array.Resize<Term>(ref terms, terms.Length + 1);
             terms[terms.Length - 1] = t;
+            Array.Sort(terms);
         }
         public Term[] Search(int year)
         {
