@@ -83,7 +83,6 @@ namespace smart_gpa_calculator
         public override string ToString()
         {
             string output = "";
-            output += "Cumulative:\r\n";
             foreach (Term term in terms)
             {
                 output += term.ToString();

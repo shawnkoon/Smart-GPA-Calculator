@@ -37,7 +37,7 @@ namespace smart_gpa_calculator
         public override string ToString()
         {
             string output = "";
-            output += department + " " + courseNumber + " " + courseName + " Grade: " + actualGPA.ToString("0.0") + " Hours: " + creditHours.ToString("0.0") + "\r\n";
+            output += department + " " + courseNumber + "   " + courseName + "   Grade: " + actualGPA.ToString("0.0") + "   Hours: " + creditHours.ToString("0.0") + "\r\n";
             return output;
         }
         // Sort first by department identifier, then course number

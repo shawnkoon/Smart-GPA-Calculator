@@ -93,13 +93,11 @@ namespace smart_gpa_calculator
                 }
 
                 //Update the Right two panels with the new info
-                // -- This part is not done yet (we probably need a doCalculation function) --
                 all.Calculate();
-                MessageBox.Show(all.ToString());
                 overallCreditLabel.Text = all.GetHours().ToString();
                 overallPointsLabel.Text = all.GetPoints().ToString("0.00");
                 overallGpaLabel.Text = all.GetGPA().ToString("0.00");
-                //I want to sort first by year then by termSeason (Term), first by dept then by courseNum (Courses)
+                coursesTextBox.Text = all.ToString();
 
                 //Clear the form and reset the Focus
                 termSeasonComboBox.Text = "Term";

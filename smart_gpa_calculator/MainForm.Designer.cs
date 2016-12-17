@@ -73,8 +73,9 @@
             this.lastGpaLabel = new System.Windows.Forms.Label();
             this.lastCreditsLabel = new System.Windows.Forms.Label();
             this.majorLabel = new System.Windows.Forms.Label();
-            this.cumulativeLabel = new System.Windows.Forms.Label();
+            this.overviewLabel = new System.Windows.Forms.Label();
             this.coursesTextBox = new System.Windows.Forms.TextBox();
+            this.termPanelLabel = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
@@ -174,7 +175,7 @@
             this.splitContainerBase.Panel2.BackColor = System.Drawing.Color.Transparent;
             this.splitContainerBase.Panel2.Controls.Add(this.splitContainerRight);
             this.splitContainerBase.Size = new System.Drawing.Size(898, 567);
-            this.splitContainerBase.SplitterDistance = 512;
+            this.splitContainerBase.SplitterDistance = 463;
             this.splitContainerBase.TabIndex = 7;
             // 
             // splitContainerLeft
@@ -211,7 +212,7 @@
             // 
             this.splitContainerLeft.Panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.splitContainerLeft.Panel2.Controls.Add(this.graphExplanationLabel);
-            this.splitContainerLeft.Size = new System.Drawing.Size(512, 567);
+            this.splitContainerLeft.Size = new System.Drawing.Size(463, 567);
             this.splitContainerLeft.SplitterDistance = 355;
             this.splitContainerLeft.TabIndex = 0;
             // 
@@ -408,7 +409,7 @@
             this.calculatorTitleLabel.AutoSize = true;
             this.calculatorTitleLabel.Font = new System.Drawing.Font("Comic Sans MS", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.calculatorTitleLabel.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.calculatorTitleLabel.Location = new System.Drawing.Point(270, 10);
+            this.calculatorTitleLabel.Location = new System.Drawing.Point(245, 10);
             this.calculatorTitleLabel.Name = "calculatorTitleLabel";
             this.calculatorTitleLabel.Size = new System.Drawing.Size(189, 49);
             this.calculatorTitleLabel.TabIndex = 10;
@@ -419,7 +420,7 @@
             this.gpaTitleLabel.AutoSize = true;
             this.gpaTitleLabel.Font = new System.Drawing.Font("Comic Sans MS", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpaTitleLabel.ForeColor = System.Drawing.Color.LightCoral;
-            this.gpaTitleLabel.Location = new System.Drawing.Point(182, 10);
+            this.gpaTitleLabel.Location = new System.Drawing.Point(157, 10);
             this.gpaTitleLabel.Name = "gpaTitleLabel";
             this.gpaTitleLabel.Size = new System.Drawing.Size(91, 49);
             this.gpaTitleLabel.TabIndex = 9;
@@ -430,7 +431,7 @@
             this.smartTitleLabel.AutoSize = true;
             this.smartTitleLabel.Font = new System.Drawing.Font("Comic Sans MS", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.smartTitleLabel.ForeColor = System.Drawing.Color.YellowGreen;
-            this.smartTitleLabel.Location = new System.Drawing.Point(56, 10);
+            this.smartTitleLabel.Location = new System.Drawing.Point(31, 10);
             this.smartTitleLabel.Name = "smartTitleLabel";
             this.smartTitleLabel.Size = new System.Drawing.Size(125, 49);
             this.smartTitleLabel.TabIndex = 8;
@@ -471,13 +472,14 @@
             this.splitContainerRight.Panel1.Controls.Add(this.lastGpaLabel);
             this.splitContainerRight.Panel1.Controls.Add(this.lastCreditsLabel);
             this.splitContainerRight.Panel1.Controls.Add(this.majorLabel);
-            this.splitContainerRight.Panel1.Controls.Add(this.cumulativeLabel);
+            this.splitContainerRight.Panel1.Controls.Add(this.overviewLabel);
             // 
             // splitContainerRight.Panel2
             // 
             this.splitContainerRight.Panel2.BackColor = System.Drawing.Color.Ivory;
+            this.splitContainerRight.Panel2.Controls.Add(this.termPanelLabel);
             this.splitContainerRight.Panel2.Controls.Add(this.coursesTextBox);
-            this.splitContainerRight.Size = new System.Drawing.Size(382, 567);
+            this.splitContainerRight.Size = new System.Drawing.Size(431, 567);
             this.splitContainerRight.SplitterDistance = 186;
             this.splitContainerRight.TabIndex = 0;
             // 
@@ -485,7 +487,7 @@
             // 
             this.overallPointsLabel.AutoSize = true;
             this.overallPointsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.overallPointsLabel.Location = new System.Drawing.Point(228, 142);
+            this.overallPointsLabel.Location = new System.Drawing.Point(250, 142);
             this.overallPointsLabel.Name = "overallPointsLabel";
             this.overallPointsLabel.Size = new System.Drawing.Size(32, 16);
             this.overallPointsLabel.TabIndex = 15;
@@ -495,7 +497,7 @@
             // 
             this.currentPointsLabel.AutoSize = true;
             this.currentPointsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentPointsLabel.Location = new System.Drawing.Point(228, 114);
+            this.currentPointsLabel.Location = new System.Drawing.Point(250, 114);
             this.currentPointsLabel.Name = "currentPointsLabel";
             this.currentPointsLabel.Size = new System.Drawing.Size(32, 16);
             this.currentPointsLabel.TabIndex = 14;
@@ -505,7 +507,7 @@
             // 
             this.lastPointsLabel.AutoSize = true;
             this.lastPointsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastPointsLabel.Location = new System.Drawing.Point(228, 84);
+            this.lastPointsLabel.Location = new System.Drawing.Point(250, 84);
             this.lastPointsLabel.Name = "lastPointsLabel";
             this.lastPointsLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lastPointsLabel.Size = new System.Drawing.Size(32, 16);
@@ -515,7 +517,7 @@
             // gpaLabel
             // 
             this.gpaLabel.AutoSize = true;
-            this.gpaLabel.Location = new System.Drawing.Point(302, 59);
+            this.gpaLabel.Location = new System.Drawing.Point(329, 59);
             this.gpaLabel.Name = "gpaLabel";
             this.gpaLabel.Size = new System.Drawing.Size(29, 13);
             this.gpaLabel.TabIndex = 12;
@@ -524,7 +526,7 @@
             // pointsLabel
             // 
             this.pointsLabel.AutoSize = true;
-            this.pointsLabel.Location = new System.Drawing.Point(228, 59);
+            this.pointsLabel.Location = new System.Drawing.Point(250, 59);
             this.pointsLabel.Name = "pointsLabel";
             this.pointsLabel.Size = new System.Drawing.Size(36, 13);
             this.pointsLabel.TabIndex = 11;
@@ -533,7 +535,7 @@
             // creditsLabel
             // 
             this.creditsLabel.AutoSize = true;
-            this.creditsLabel.Location = new System.Drawing.Point(156, 59);
+            this.creditsLabel.Location = new System.Drawing.Point(173, 59);
             this.creditsLabel.Name = "creditsLabel";
             this.creditsLabel.Size = new System.Drawing.Size(39, 13);
             this.creditsLabel.TabIndex = 10;
@@ -543,7 +545,7 @@
             // 
             this.overallGpaLabel.AutoSize = true;
             this.overallGpaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.overallGpaLabel.Location = new System.Drawing.Point(302, 142);
+            this.overallGpaLabel.Location = new System.Drawing.Point(329, 142);
             this.overallGpaLabel.Name = "overallGpaLabel";
             this.overallGpaLabel.Size = new System.Drawing.Size(32, 16);
             this.overallGpaLabel.TabIndex = 9;
@@ -553,7 +555,7 @@
             // 
             this.overallCreditLabel.AutoSize = true;
             this.overallCreditLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.overallCreditLabel.Location = new System.Drawing.Point(176, 142);
+            this.overallCreditLabel.Location = new System.Drawing.Point(193, 142);
             this.overallCreditLabel.Name = "overallCreditLabel";
             this.overallCreditLabel.Size = new System.Drawing.Size(15, 16);
             this.overallCreditLabel.TabIndex = 8;
@@ -573,7 +575,7 @@
             // 
             this.currentGpaLabel.AutoSize = true;
             this.currentGpaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentGpaLabel.Location = new System.Drawing.Point(302, 114);
+            this.currentGpaLabel.Location = new System.Drawing.Point(329, 114);
             this.currentGpaLabel.Name = "currentGpaLabel";
             this.currentGpaLabel.Size = new System.Drawing.Size(32, 16);
             this.currentGpaLabel.TabIndex = 6;
@@ -583,7 +585,7 @@
             // 
             this.currentCreditsLabel.AutoSize = true;
             this.currentCreditsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentCreditsLabel.Location = new System.Drawing.Point(176, 114);
+            this.currentCreditsLabel.Location = new System.Drawing.Point(193, 114);
             this.currentCreditsLabel.Name = "currentCreditsLabel";
             this.currentCreditsLabel.Size = new System.Drawing.Size(15, 16);
             this.currentCreditsLabel.TabIndex = 5;
@@ -603,7 +605,7 @@
             // 
             this.lastGpaLabel.AutoSize = true;
             this.lastGpaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastGpaLabel.Location = new System.Drawing.Point(302, 84);
+            this.lastGpaLabel.Location = new System.Drawing.Point(329, 84);
             this.lastGpaLabel.Name = "lastGpaLabel";
             this.lastGpaLabel.Size = new System.Drawing.Size(32, 16);
             this.lastGpaLabel.TabIndex = 3;
@@ -613,7 +615,7 @@
             // 
             this.lastCreditsLabel.AutoSize = true;
             this.lastCreditsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastCreditsLabel.Location = new System.Drawing.Point(176, 84);
+            this.lastCreditsLabel.Location = new System.Drawing.Point(193, 84);
             this.lastCreditsLabel.Name = "lastCreditsLabel";
             this.lastCreditsLabel.Size = new System.Drawing.Size(15, 16);
             this.lastCreditsLabel.TabIndex = 2;
@@ -629,26 +631,38 @@
             this.majorLabel.TabIndex = 1;
             this.majorLabel.Text = "Last Terms";
             // 
-            // cumulativeLabel
+            // overviewLabel
             // 
-            this.cumulativeLabel.AutoSize = true;
-            this.cumulativeLabel.Font = new System.Drawing.Font("Comic Sans MS", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cumulativeLabel.Location = new System.Drawing.Point(3, 10);
-            this.cumulativeLabel.Name = "cumulativeLabel";
-            this.cumulativeLabel.Size = new System.Drawing.Size(162, 40);
-            this.cumulativeLabel.TabIndex = 0;
-            this.cumulativeLabel.Text = "Cumulative";
+            this.overviewLabel.AutoSize = true;
+            this.overviewLabel.Font = new System.Drawing.Font("Comic Sans MS", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.overviewLabel.Location = new System.Drawing.Point(3, 10);
+            this.overviewLabel.Name = "overviewLabel";
+            this.overviewLabel.Size = new System.Drawing.Size(142, 40);
+            this.overviewLabel.TabIndex = 0;
+            this.overviewLabel.Text = "Overview";
             // 
             // coursesTextBox
             // 
+            this.coursesTextBox.BackColor = System.Drawing.Color.Ivory;
             this.coursesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.coursesTextBox.Cursor = System.Windows.Forms.Cursors.Default;
-            this.coursesTextBox.Location = new System.Drawing.Point(0, 0);
+            this.coursesTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.coursesTextBox.Location = new System.Drawing.Point(25, 57);
             this.coursesTextBox.Multiline = true;
             this.coursesTextBox.Name = "coursesTextBox";
             this.coursesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.coursesTextBox.Size = new System.Drawing.Size(382, 377);
+            this.coursesTextBox.Size = new System.Drawing.Size(406, 320);
             this.coursesTextBox.TabIndex = 1;
+            // 
+            // termPanelLabel
+            // 
+            this.termPanelLabel.AutoSize = true;
+            this.termPanelLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.termPanelLabel.Location = new System.Drawing.Point(4, 11);
+            this.termPanelLabel.Name = "termPanelLabel";
+            this.termPanelLabel.Size = new System.Drawing.Size(99, 33);
+            this.termPanelLabel.TabIndex = 2;
+            this.termPanelLabel.Text = "Terms";
             // 
             // mainForm
             // 
@@ -717,7 +731,7 @@
         private System.Windows.Forms.Label smartTitleLabel;
         private System.Windows.Forms.Label graphExplanationLabel;
         private System.Windows.Forms.SplitContainer splitContainerRight;
-        private System.Windows.Forms.Label cumulativeLabel;
+        private System.Windows.Forms.Label overviewLabel;
         private System.Windows.Forms.Label majorLabel;
         private System.Windows.Forms.Label overallCreditLabel;
         private System.Windows.Forms.Label overallLabel;
@@ -738,6 +752,7 @@
         private System.Windows.Forms.TextBox coursesTextBox;
         private System.Windows.Forms.NumericUpDown courseNumUpDown;
         private System.Windows.Forms.NumericUpDown gradeUpDown;
+        private System.Windows.Forms.Label termPanelLabel;
     }
 }
 
